@@ -1,0 +1,33 @@
+class GfG
+{
+    Node mergeResult(Node node1, Node node2)
+    {
+    // Your code here
+       Node head=null,temp1=node1,temp2=node2;
+       ArrayList<Integer> al = new ArrayList<>();
+       // inserting all the elements inside the arraylist
+       while(temp1!=null){
+           al.add(temp1.data);
+           temp1=temp1.next;
+       }
+       
+       // inserting all the elements inside the arraylist
+       while(temp2!=null){
+           al.add(temp2.data);
+           temp2=temp2.next;
+       }
+       
+       //sorting arraylist in reverse order
+       Collections.sort(al, Collections.reverseOrder()); 
+       
+       if(al.size()>0){
+       Node node = new Node(al.get(0));
+       head=node;
+       for(int i=1;i<al.size();i++){
+          node.next = new Node(al.get(i));
+          node =node.next;
+       }
+      }
+       return head;
+    }
+}
