@@ -1,0 +1,17 @@
+class Solution
+{    public static boolean checkPangram  (String s) {
+        int n = s.length();
+        HashSet<Character> m = new HashSet<>();
+
+        s = s.toLowerCase();
+
+        for (int i = 0; i < n; i++) {
+            char c = s.charAt(i);
+            if (Character.isLetter(c)) {
+                m.add(c);
+            }
+        }
+
+        return m.size() == 26;
+    }
+}
