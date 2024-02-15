@@ -1,0 +1,15 @@
+class Solution{
+        
+    static int search(int arr[], int N, int X)
+    {
+        for(int i = 0; i<N;i++){
+            if(arr[i]==X){
+                return i;// return the index that has equal value as X
+            }
+        }
+        
+        // Your code here
+        return -1;// used to show that the element does not exist in the array.
+    }
+    
+}
