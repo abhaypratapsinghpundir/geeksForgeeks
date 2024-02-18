@@ -1,0 +1,22 @@
+class Solution
+{
+    
+    static boolean ispar(String x)
+    {
+        LinkedList<Character> list=new LinkedList<>();
+        for(int i=0;i<x.length();i++){
+            char ch=x.charAt(i);
+            if(i==0){
+                list.push(ch);
+                continue;
+            }
+            if(!list.isEmpty()&&(ch==list.peek()+1||ch==list.peek()+2)){
+                list.pop();
+            }
+            else{
+                list.push(ch);
+            }
+        }
+        return list.isEmpty();
+    }
+}
