@@ -1,0 +1,28 @@
+int t=text.length();
+        int p=pat.length();
+        boolean found=false;
+       int i;
+       for(i=0;i<t-p+1;i++)
+       {
+           int j;
+       for(j=0;j<p;j++)
+       {
+           if(text.charAt(i+j)!=pat.charAt(j))
+           {
+               break;
+           }
+       }
+       if(j==p)
+       {
+           found=true;
+           break;
+       }
+    }
+    if(found)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
