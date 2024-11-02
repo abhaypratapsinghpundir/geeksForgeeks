@@ -1,0 +1,18 @@
+class Solution {
+    public String average(int arr[]) {
+        // code here
+        double sum = 0;
+        double avg;
+        
+        // Calculate the sum of the array elements
+        for (int i = 0; i < arr.length; i++) {
+            sum += arr[i];
+        }
+        
+        // Calculate the average
+        avg = sum / arr.length;
+        
+        // Format the average to 2 decimal places
+        return String.format("%.2f", avg);
+    }
+}
