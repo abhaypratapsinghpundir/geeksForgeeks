@@ -1,0 +1,25 @@
+class Solution {
+    
+    public pair indexes(long v[], long x)
+    {
+        // Your code goes here
+        int p[]=new int[2];
+        p[0] = Integer.MAX_VALUE;
+        p[1] = Integer.MIN_VALUE;
+        int c=0;
+        for(int i=0;i<v.length;i++){
+            if(v[i]==x){
+                p[0]=Math.min(i, p[0]);
+                p[1]=Math.max(i, p[1]);
+                c++;
+            }
+        }
+        if(c==0){
+            pair pa = new pair(-1, -1);
+            return pa;
+        }else{
+            pair pa = new pair(p[0], p[1]);
+            return pa;
+        }
+    }
+}
