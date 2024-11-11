@@ -1,0 +1,24 @@
+class Solution {
+    public static boolean makePalindrome(int n, String[] arr) {
+    String ans="";
+        for(String s:arr)
+        ans+=s;
+        boolean flag=true;
+        for(String s:arr)
+        {
+            StringBuilder str=new StringBuilder(s);
+            String revstr=String.valueOf(str.reverse());
+            if(!ans.contains(revstr) )
+            {
+                flag=false;
+                break;
+            }
+            else{
+                // System.out.print(ans+"--");
+                ans=ans.replace(revstr,"");
+                
+            }
+        }
+        return (flag==true)?true:false;
+    }
+}
