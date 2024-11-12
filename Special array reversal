@@ -1,0 +1,27 @@
+class Solution
+{
+    public String reverse(String str)
+    {
+        char []c = str.toCharArray();
+        int left = 0, right = c.length-1;
+        while(left<right){
+           
+            while(left<right&&right>0&&(c[right]<'A'||(c[right]>'Z'&&c[right]<'a')||c[right]>'z')){
+                right--;
+            }
+            while(left<right&&left<c.length&&(c[left]<'A'||(c[left]>'Z'&&c[left]<'a')||c[left]>'z')){
+                left++;
+            }
+            if(left<right){
+                char ch = c[left];
+                c[left] = c[right];
+                c[right] = ch;
+                left++;
+                right--;
+            }
+           
+        }
+       return new String(c);
+        
+    }
+}
