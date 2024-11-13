@@ -1,0 +1,25 @@
+class Solution
+{
+   
+    String reverseEqn(String S)
+    {
+        Stack<String> sb = new Stack<>();
+        String res = "";
+        for(int i=0;i<S.length();i++){
+            char ch = S.charAt(i);
+            if(ch != '+' && ch != '-' && ch != '*' && ch != '/'){
+                res = res + ch;
+          } else{
+                sb.push(res);
+                res = "";
+                sb.push(ch + "");
+            }
+        }
+        sb.push(res);
+        StringBuffer r = new StringBuffer();
+        while(!sb.isEmpty()) {
+        r.append(sb.pop());
+         }
+        return r.toString();
+    }
+}
