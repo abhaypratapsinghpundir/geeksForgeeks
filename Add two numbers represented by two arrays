@@ -1,0 +1,38 @@
+class Solution {
+
+    String calc_Sum(int arr1[], int arr2[]) {
+        // Complete the function
+        int n = arr1.length;
+        int m = arr2.length;
+        
+        int max = Math.max(n,m);
+        
+        int[] result = new int[max+1];
+        
+        int i = n-1;
+        int j = m-1;
+        int carry =0;
+        StringBuilder s = new StringBuilder();
+        while(i>-1||j>-1){
+            int n1 = i>-1?arr1[i]:0;
+            int n2 = j>-1?arr2[j]:0;
+            int sum = n1+n2+carry;
+            s.append(sum%10);
+            carry = sum/10;
+            i--;
+            j--;
+        }
+        if(carry==1){
+            s.append(carry);
+        }
+        for(int d = s.length()-1;d>-1;d--){
+            if(s.charAt(d)=='0'){
+                s.deleteCharAt(d);
+            }else{
+                break;
+            }
+        }
+        return s.reverse().toString();
+    }
+        
+    }
