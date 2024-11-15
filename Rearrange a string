@@ -1,0 +1,33 @@
+class Solution
+{
+    public String arrangeString(String s)
+        {
+            //code here.
+            ArrayList<Character> alphabets=new ArrayList<>();
+            int digitsum=0;
+            int flag=0;
+            for(char ch:s.toCharArray())
+            {
+                if(Character.isDigit(ch))
+                {
+                    digitsum+=ch-'0';
+                    flag++;
+                }
+                else
+                {
+                    alphabets.add(ch);
+                }
+            }
+            Collections.sort(alphabets);
+            StringBuilder result=new StringBuilder("");
+            for(char ch:alphabets)
+            {
+                result.append(ch);
+            }
+            if(flag!=0)
+            {
+                result.append(digitsum);
+            }
+            return result.toString();
+        }
+}
