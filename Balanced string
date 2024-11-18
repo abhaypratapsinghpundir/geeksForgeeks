@@ -1,0 +1,26 @@
+class Solution {
+    static String BalancedString(int N){
+        String ans="";
+        String z="abcdefghijklmnopqrstuvwxyz";
+        int t=N/26;
+        int n=N%26;
+        int s =0 ;
+        int e =0; // s=start, e=end;
+        for(int i=0;i<t;i++) ans+=z;
+        if(n%2==0) s=n/2;
+        else{
+            if(check(N)) s=(n+1)/2;
+            else s=(n-1)/2;
+        }
+        e=n-s;
+        return ans + z.substring(0, s)+ z.substring(26-e);
+    }
+    static boolean check(int n){
+      int sum=0;
+      while(n>0){
+          sum+=n%10;
+          n=n/10;
+      }
+      return sum%2==0?true:false;
+  }
+}
