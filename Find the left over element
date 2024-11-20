@@ -1,0 +1,12 @@
+class Solution {
+    public static int leftElement(int[] arr) {
+        int n=arr.length;
+        Arrays.sort(arr);
+        int ans=0;
+        if(n%2!=0) 
+            ans=arr[(n/2)];
+        else
+            ans=arr[(n/2)-1];
+        return ans;
+    }
+}
